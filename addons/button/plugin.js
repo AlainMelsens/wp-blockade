@@ -1246,14 +1246,14 @@ tinymce.PluginManager.add('button_block', function(editor, url) {
 		},
 		apply_form_results : function( data, form_data, block ) {
 			var content = '<span class="button_text">' + form_data.text + '</span>';
-			if( form_data.icon ) {
+			if( form_data.icon && form_data.icon.length > 1) {
 				var icon = '<i class="glyphicon ' + form_data.icon + '"></i>';
 				if( form_data.iconpos == 'left' ) {
 					content = icon + ' ' + content;
 				} else {
 					content = content + ' ' + icon;
 				}
-			}
+			} 
 			var link_class = 'btn btn-' + form_data.size + ' btn-' + form_data.type;
 			if( form_data.block ) {
 				link_class += ' btn-block';
